@@ -10,5 +10,7 @@ libraryDependencies ++= Seq(
   akkaAgent,
   akkaTestKit,
   awsSdk,
-  scalaTest
+  playJson,
+  scalaTest,
+  slf4j
 )

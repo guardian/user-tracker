@@ -37,7 +37,7 @@ object UserTracker {
   }
 }
 
-class UserTracker(
+final class UserTracker(
     val persistence: Persistence,
     val consideredActiveFor: JodaTimeDuration = JodaTimeDuration.standardMinutes(5),
     val clientId: ClientId = ClientId.next

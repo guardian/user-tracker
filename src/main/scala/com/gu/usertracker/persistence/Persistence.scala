@@ -5,10 +5,8 @@ import scala.concurrent.Future
 import com.gu.usertracker.{UserId, ClientId}
 
 trait Persistence {
+  /** Set the recent user history for the given client ID. */
   def setLastSeen(host: ClientId, users: Map[UserId, DateTime]): Future[Unit]
 
-  /** List all users that have been seen since the given date time */
   def getRecentlySeen: Future[Map[ClientId, Map[UserId, DateTime]]]
 }
-
-/** TODO add DynamoDB persistence layer */

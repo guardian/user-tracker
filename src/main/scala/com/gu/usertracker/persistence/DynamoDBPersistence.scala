@@ -45,9 +45,6 @@ object DynamoDBPersistence extends Logging {
   val LastUpdatedField = "updated_at"
   val HostsPK = "hosts"
 
-  /** Persistence that uses the default AWS credentials chain */
-  def apply(tableName: String) = DynamoDBPersistence(new AmazonDynamoDBAsyncClient(), tableName)
-
   def startGarbageCollection(persistence: DynamoDBPersistence,
                              frequency: scala.concurrent.duration.FiniteDuration)
                             (implicit actorSystem: ActorSystem, executionContext: ExecutionContext) {
